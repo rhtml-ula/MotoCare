@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MotoCare</string>
+
+    <!-- Navigasi & judul -->
+    <string name="nav_home">Beranda</string>
+    <string name="nav_history">Riwayat</string>
+    <string name="nav_reminders">Pengingat</string>
+    <string name="nav_motors">Motor</string>
+    <string name="nav_profile">Profil</string>
+    <string name="title_home">MotoCare</string>
+    <string name="title_history">Riwayat Servis</string>
+    <string name="title_reminders">Pengingat Perawatan</string>
+    <string name="title_motors">Motor Saya</string>
+    <string name="title_profile">Profil</string>
+    <string name="title_service_detail">Detail Servis</string>
+    <string name="title_service_form">Form Servis</string>
+    <string name="title_reminder_form">Form Pengingat</string>
+    <string name="title_motor_form">Data Motor</string>
+
+    <!-- Aksi -->
+    <string name="action_login">Masuk</string>
+    <string name="action_register">Daftar</string>
+    <string name="action_logout">Keluar</string>
+    <string name="action_to_register">Belum punya akun? Daftar</string>
+    <string name="action_to_login">Sudah punya akun? Masuk</string>
+    <string name="action_forgot_password">Lupa kata sandi?</string>
+    <string name="action_send">Kirim</string>
+    <string name="action_cancel">Batal</string>
+    <string name="action_save">Simpan</string>
+    <string name="action_edit">Ubah</string>
+    <string name="action_delete">Hapus</string>
+    <string name="action_retry">Coba lagi</string>
+    <string name="action_camera">Kamera</string>
+    <string name="action_gallery">Galeri</string>
+    <string name="action_remove_photo">Hapus foto</string>
+    <string name="action_add_service">Catat Servis</string>
+    <string name="action_add_reminder">Tambah Pengingat</string>
+    <string name="action_add_motor">Tambah Motor</string>
+    <string name="action_use_location">Gunakan lokasi saya</string>
+    <string name="action_test_notification">Tes notifikasi</string>
+
+    <!-- Login & registrasi -->
+    <string name="login_subtitle">Catat riwayat servis dan jangan lewatkan jadwal perawatan motor Anda</string>
+    <string name="register_title">Buat Akun</string>
+    <string name="register_subtitle">Daftar untuk mulai mencatat perawatan motor</string>
+    <string name="hint_name">Nama lengkap</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Kata sandi</string>
+    <string name="hint_password_min">Kata sandi (minimal 6 karakter)</string>
+    <string name="hint_confirm_password">Ulangi kata sandi</string>
+    <string name="forgot_title">Atur ulang kata sandi</string>
+    <string name="forgot_message">Masukkan email akun Anda. Kami akan mengirim tautan untuk mengatur ulang kata sandi.</string>
+    <string name="reset_sent">Tautan pengaturan ulang telah dikirim ke email Anda.</string>
+    <string name="logout_title">Keluar dari akun?</string>
+    <string name="logout_message">Anda perlu masuk lagi untuk mengakses data Anda.</string>
+
+    <!-- Pesan error autentikasi & validasi -->
+    <string name="err_email_empty">Email tidak boleh kosong</string>
+    <string name="err_email_format">Format email tidak valid</string>
+    <string name="err_password_empty">Kata sandi tidak boleh kosong</string>
+    <string name="err_password_short">Kata sandi minimal 6 karakter</string>
+    <string name="err_password_mismatch">Kata sandi tidak sama</string>
+    <string name="err_name_short">Nama minimal 3 karakter</string>
+    <string name="err_network">Tidak ada koneksi internet. Periksa jaringan Anda lalu coba lagi.</string>
+    <string name="err_user_not_found">Akun dengan email ini tidak ditemukan atau telah dinonaktifkan.</string>
+    <string name="err_wrong_credentials">Email atau kata sandi salah.</string>
+    <string name="err_email_used">Email ini sudah terdaftar. Silakan masuk.</string>
+    <string name="err_weak_password">Kata sandi terlalu lemah. Gunakan kombinasi yang lebih kuat.</string>
+    <string name="err_too_many">Terlalu banyak percobaan. Coba lagi beberapa saat lagi.</string>
+    <string name="err_generic">Terjadi kesalahan. Silakan coba lagi.</string>
+    <string name="err_motor_required">Pilih motor terlebih dahulu</string>
+    <string name="err_type_required">Pilih jenis servis</string>
+    <string name="err_date_required">Pilih tanggal</string>
+    <string name="err_date_future">Tanggal servis tidak boleh di masa depan</string>
+    <string name="err_number_required">Isi dengan angka yang valid</string>
+    <string name="err_number_positive">Isi dengan angka lebih dari 0</string>
+    <string name="err_workshop_required">Nama bengkel tidak boleh kosong</string>
+    <string name="err_due_required">Isi tanggal atau jarak (km) jatuh tempo, atau isi interval</string>
+    <string name="err_motor_name">Nama motor minimal 2 karakter</string>
+    <string name="err_plate">Plat nomor tidak valid</string>
+    <string name="err_year">Tahun harus antara %1$d dan %2$d</string>
+
+    <!-- Beranda -->
+    <string name="home_greeting">Halo, %s!</string>
+    <string name="default_user">Pengendara</string>
+    <string name="home_subtitle">Ringkasan perawatan motor Anda</string>
+    <string name="home_upcoming">Pengingat terdekat</string>
+    <string name="home_upcoming_empty">Tidak ada perawatan yang mendesak. Motor Anda aman!</string>
+    <string name="stat_services">Total servis</string>
+    <string name="stat_cost">Total biaya servis</string>
+    <string name="need_motor_first">Tambahkan data motor terlebih dahulu.</string>
+
+    <!-- Cuaca (API eksternal) -->
+    <string name="weather_temp_fmt">%d°C</string>
+    <string name="weather_desc_fmt">%1$s • angin %2$d km/j</string>
+    <string name="weather_loc_default">Lokasi bawaan (Jakarta)</string>
+    <string name="weather_loc_device">Berdasarkan lokasi perangkat</string>
+    <string name="weather_error_data">Data cuaca tidak dapat dimuat.</string>
+    <string name="weather_error_server">Layanan cuaca sedang bermasalah. Coba lagi nanti.</string>
+    <string name="advice_rain">Hujan: kurangi kecepatan, periksa rem dan ban, lalu bersihkan dan lumasi rantai setelah berkendara.</string>
+    <string name="advice_dry">Cuaca mendukung: waktu yang baik untuk memeriksa oli, tekanan ban, dan melakukan servis.</string>
+    <string name="wx_clear">Cerah</string>
+    <string name="wx_cloudy">Berawan</string>
+    <string name="wx_fog">Berkabut</string>
+    <string name="wx_drizzle">Gerimis</string>
+    <string name="wx_rain">Hujan</string>
+    <string name="wx_storm">Badai petir</string>
+    <string name="wx_other">Cuaca tidak diketahui</string>
+    <string name="location_denied_info">Izin lokasi ditolak. Cuaca memakai lokasi bawaan.</string>
+
+    <!-- Riwayat -->
+    <string name="search_hint">Cari jenis servis, bengkel, catatan…</string>
+    <string name="filter_motor">Motor</string>
+    <string name="sort_by">Urutkan</string>
+    <string name="all_motors">Semua motor</string>
+    <string name="history_empty_title">Belum ada riwayat servis</string>
+    <string name="history_empty_msg">Ketuk “Catat Servis” untuk menambahkan servis pertama Anda.</string>
+    <string name="search_not_found_title">Data tidak ditemukan</string>
+    <string name="search_not_found_msg">Coba kata kunci atau filter yang lain.</string>
+    <string name="delete_service_title">Hapus riwayat servis?</string>
+    <string name="delete_service_msg">Catatan “%s” akan dihapus permanen.</string>
+    <string name="no_notes">Tidak ada catatan</string>
+    <string name="label_motor">Motor</string>
+    <string name="label_date">Tanggal servis</string>
+    <string name="label_odometer">Odometer</string>
+    <string name="label_workshop">Bengkel</string>
+    <string name="label_notes">Catatan</string>
+    <string name="label_receipt_photo">Foto struk / bukti servis (opsional)</string>
+    <string name="deleted_ok">Data berhasil dihapus</string>
+    <string name="saved_ok">Data berhasil disimpan</string>
+
+    <!-- Form -->
+    <string name="hint_motor">Motor</string>
+    <string name="hint_service_type">Jenis servis</string>
+    <string name="hint_date">Tanggal</string>
+    <string name="hint_odometer">Odometer saat servis</string>
+    <string name="hint_cost">Biaya</string>
+    <string name="hint_workshop">Nama bengkel</string>
+    <string name="hint_notes">Catatan (opsional)</string>
+    <string name="hint_motor_name">Merek dan model (mis. Honda Vario 125)</string>
+    <string name="hint_plate">Plat nomor</string>
+    <string name="hint_year">Tahun pembuatan</string>
+    <string name="hint_odometer_now">Odometer saat ini</string>
+    <string name="cd_photo">Foto</string>
+    <string name="photo_failed">Gagal memuat foto</string>
+    <string name="camera_unavailable">Aplikasi kamera tidak tersedia di perangkat ini</string>
+
+    <!-- Pengingat -->
+    <string name="reminders_empty_title">Belum ada pengingat</string>
+    <string name="reminders_empty_msg">Buat pengingat agar tidak lupa ganti oli, servis berkala, dan lainnya.</string>
+    <string name="reminder_due_section">Jatuh tempo</string>
+    <string name="reminder_due_help">Isi tanggal, jarak tempuh, atau keduanya.</string>
+    <string name="hint_due_date">Tanggal jatuh tempo</string>
+    <string name="hint_due_km">Odometer jatuh tempo</string>
+    <string name="reminder_interval_section">Interval berulang (opsional)</string>
+    <string name="reminder_interval_help">Pengingat diperpanjang otomatis saat Anda mencatat servis sejenis.</string>
+    <string name="hint_interval_month">Setiap</string>
+    <string name="hint_interval_km">Setiap jarak</string>
+    <string name="unit_month">bulan</string>
+    <string name="label_active">Pengingat aktif</string>
+    <string name="delete_reminder_title">Hapus pengingat?</string>
+    <string name="delete_reminder_msg">Pengingat “%s” akan dihapus.</string>
+    <string name="status_overdue">Terlambat</string>
+    <string name="status_soon">Segera</string>
+    <string name="status_ok">Aman</string>
+    <string name="status_inactive">Nonaktif</string>
+    <string name="days_left">%d hari lagi</string>
+    <string name="days_late">terlambat %d hari</string>
+    <string name="due_today">hari ini</string>
+    <string name="due_date_fmt">Tanggal: %1$s (%2$s)</string>
+    <string name="due_km_fmt">Jarak: %1$s (%2$s)</string>
+    <string name="km_left">sisa %s</string>
+    <string name="km_over">lewat %s</string>
+
+    <!-- Motor -->
+    <string name="motors_empty_title">Belum ada motor</string>
+    <string name="motors_empty_msg">Tambahkan motor Anda untuk mulai mencatat servis.</string>
+    <string name="motor_info_fmt">Tahun %1$d • %2$s</string>
+    <string name="delete_motor_title">Hapus motor?</string>
+    <string name="delete_motor_msg">Motor “%s” beserta seluruh riwayat servis dan pengingatnya akan dihapus permanen.</string>
+
+    <!-- Profil -->
+    <string name="profile_theme">Tampilan</string>
+    <string name="theme_system">Sistem</string>
+    <string name="theme_light">Terang</string>
+    <string name="theme_dark">Gelap</string>
+    <string name="profile_notifications">Notifikasi</string>
+    <string name="profile_notifications_help">Pengingat jatuh tempo dikirim otomatis. Coba kirim notifikasi uji.</string>
+    <string name="version_fmt">MotoCare versi %s</string>
+
+    <!-- Notifikasi -->
+    <string name="channel_name">Pengingat perawatan</string>
+    <string name="channel_desc">Notifikasi jadwal servis dan perawatan motor</string>
+    <string name="notif_title_overdue">Perawatan terlambat</string>
+    <string name="notif_title_soon">Perawatan segera jatuh tempo</string>
+    <string name="notif_body_overdue">%1$s untuk %2$s sudah melewati jadwal. Segera lakukan servis.</string>
+    <string name="notif_body_soon">%1$s untuk %2$s akan segera jatuh tempo.</string>
+    <string name="notif_test_body">Notifikasi berfungsi. Belum ada perawatan yang mendesak.</string>
+    <string name="notif_test_sent">Notifikasi uji dikirim</string>
+    <string name="notif_denied_info">Izin notifikasi ditolak. Pengingat tetap tersimpan, tetapi tidak muncul sebagai notifikasi.</string>
+
+    <!-- Array -->
+    <string-array name="service_types">
+        <item>Ganti oli mesin</item>
+        <item>Ganti oli gardan</item>
+        <item>Servis berkala</item>
+        <item>Servis CVT</item>
+        <item>Ganti ban</item>
+        <item>Ganti kampas rem</item>
+        <item>Ganti busi</item>
+        <item>Ganti aki</item>
+        <item>Ganti filter udara</item>
+        <item>Setel / ganti rantai</item>
+        <item>Lainnya</item>
+    </string-array>
+    <string-array name="sort_options">
+        <item>Terbaru</item>
+        <item>Terlama</item>
+        <item>Biaya tertinggi</item>
+        <item>Biaya terendah</item>
+    </string-array>
+</resources>

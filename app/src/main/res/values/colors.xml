@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="moto_primary">#D84315</color>
+    <color name="moto_on_primary">#FFFFFF</color>
+    <color name="moto_primary_container">#FFDBD0</color>
+    <color name="moto_on_primary_container">#3A0B00</color>
+    <color name="moto_secondary">#37474F</color>
+    <color name="moto_on_secondary">#FFFFFF</color>
+    <color name="moto_surface">#FFFBFF</color>
+    <color name="moto_on_surface">#201A18</color>
+    <color name="moto_background">#F6F2EF</color>
+    <color name="status_ok">#2E7D32</color>
+    <color name="status_soon">#EF6C00</color>
+    <color name="status_overdue">#C62828</color>
+    <color name="launcher_background">#D84315</color>
+</resources>
