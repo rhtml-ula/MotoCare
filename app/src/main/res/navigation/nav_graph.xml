@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.rahmatulula.motocare.ui.home.HomeFragment"
+        android:label="@string/title_home" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.rahmatulula.motocare.ui.history.HistoryFragment"
+        android:label="@string/title_history" />
+
+    <fragment
+        android:id="@+id/remindersFragment"
+        android:name="com.rahmatulula.motocare.ui.reminder.RemindersFragment"
+        android:label="@string/title_reminders" />
+
+    <fragment
+        android:id="@+id/motorsFragment"
+        android:name="com.rahmatulula.motocare.ui.motor.MotorsFragment"
+        android:label="@string/title_motors" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.rahmatulula.motocare.ui.profile.ProfileFragment"
+        android:label="@string/title_profile" />
+
+    <fragment
+        android:id="@+id/serviceDetailFragment"
+        android:name="com.rahmatulula.motocare.ui.history.ServiceDetailFragment"
+        android:label="@string/title_service_detail">
+        <argument android:name="serviceId" app:argType="long" android:defaultValue="0L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/serviceFormFragment"
+        android:name="com.rahmatulula.motocare.ui.history.ServiceFormFragment"
+        android:label="@string/title_service_form">
+        <argument android:name="serviceId" app:argType="long" android:defaultValue="0L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reminderFormFragment"
+        android:name="com.rahmatulula.motocare.ui.reminder.ReminderFormFragment"
+        android:label="@string/title_reminder_form">
+        <argument android:name="reminderId" app:argType="long" android:defaultValue="0L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/motorFormFragment"
+        android:name="com.rahmatulula.motocare.ui.motor.MotorFormFragment"
+        android:label="@string/title_motor_form">
+        <argument android:name="motorId" app:argType="long" android:defaultValue="0L" />
+    </fragment>
+</navigation>
