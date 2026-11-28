@@ -181,6 +181,11 @@
     <string name="delete_motor_msg">Motor “%s” beserta seluruh riwayat servis dan pengingatnya akan dihapus permanen.</string>
 
     <!-- Profil -->
+    <string name="profile_photo_title">Foto profil</string>
+    <string name="action_change_photo">Ubah foto profil</string>
+    <string name="cd_avatar">Foto profil, ketuk untuk mengubah</string>
+    <string name="photo_updated">Foto profil diperbarui</string>
+    <string name="photo_removed">Foto profil dihapus</string>
     <string name="profile_theme">Tampilan</string>
     <string name="theme_system">Sistem</string>
     <string name="theme_light">Terang</string>

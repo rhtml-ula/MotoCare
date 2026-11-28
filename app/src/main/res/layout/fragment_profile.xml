@@ -19,14 +19,27 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="88dp"
-                android:layout_height="88dp"
+                android:id="@+id/iv_avatar"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/bg_logo_circle"
-                android:contentDescription="@null"
-                android:padding="22dp"
+                android:clickable="true"
+                android:contentDescription="@string/cd_avatar"
+                android:focusable="true"
+                android:padding="24dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_person"
                 app:tint="@color/moto_on_primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_change_photo"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/action_change_photo"
+                app:icon="@drawable/ic_camera" />
 
             <TextView
                 android:id="@+id/tv_name"

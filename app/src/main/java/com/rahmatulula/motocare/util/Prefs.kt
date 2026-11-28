@@ -25,4 +25,13 @@ object Prefs {
 
     fun notifPermissionAsked(ctx: Context): Boolean = sp(ctx).getBoolean("notif_asked", false)
     fun setNotifPermissionAsked(ctx: Context) { sp(ctx).edit().putBoolean("notif_asked", true).apply() }
+
+    // Foto profil disimpan per pengguna (kunci memakai UID Firebase)
+    fun profilePhoto(ctx: Context, uid: String): String? = sp(ctx).getString("profile_photo_$uid", null)
+
+    fun setProfilePhoto(ctx: Context, uid: String, path: String?) {
+        val e = sp(ctx).edit()
+        if (path == null) e.remove("profile_photo_$uid") else e.putString("profile_photo_$uid", path)
+        e.apply()
+    }
 }
