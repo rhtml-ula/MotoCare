@@ -21,6 +21,7 @@ import com.rahmatulula.motocare.util.NotificationHelper
 import com.rahmatulula.motocare.util.Prefs
 import com.rahmatulula.motocare.viewmodel.AuthViewModel
 import com.rahmatulula.motocare.viewmodel.MotoViewModel
+import com.rahmatulula.motocare.worker.ReminderWorker
 
 /** Host navigasi: BottomNavigationView + Navigation Component. */
 class MainActivity : AppCompatActivity() {
@@ -66,6 +67,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         askNotificationPermissionOnce()
+
+        // Saat aplikasi dibuka, cek pengingat langsung (hanya sekali per pembukaan)
+        if (savedInstanceState == null) ReminderWorker.checkNow(this)
     }
 
     private fun askNotificationPermissionOnce() {

@@ -3,6 +3,7 @@ package com.rahmatulula.motocare.worker
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
@@ -33,14 +34,16 @@ class ReminderWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(c
             .map { it to ReminderLogic.status(it) }
             .filter { it.second == ReminderStatus.OVERDUE || it.second == ReminderStatus.SOON }
             .forEach { (item, status) ->
-                // Maksimal satu notifikasi per pengingat per hari (kecuali tes manual)
-                if (!force && Prefs.lastNotifiedDay(applicationContext, item.reminder.id) == today) return@forEach
+                // Satu notifikasi per pengingat per hari untuk tiap status (Segera / Terlambat).
+                // Jika status naik dari Segera ke Terlambat di hari yang sama, tetap dikirim.
+                val stamp = today * 10 + status.ordinal
+                if (!force && Prefs.lastNotifiedDay(applicationContext, item.reminder.id) == stamp) return@forEach
                 val body = buildBody(item.motorNama, item.reminder.jenis, status)
                 val title = applicationContext.getString(
                     if (status == ReminderStatus.OVERDUE) R.string.notif_title_overdue else R.string.notif_title_soon
                 )
                 if (NotificationHelper.show(applicationContext, item.reminder.id.toInt(), title, body)) {
-                    Prefs.setNotifiedDay(applicationContext, item.reminder.id, today)
+                    Prefs.setNotifiedDay(applicationContext, item.reminder.id, stamp)
                     sent++
                 }
             }
@@ -66,9 +69,16 @@ class ReminderWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(c
         private const val KEY_FORCE = "force"
 
         fun schedule(ctx: Context) {
-            val req = PeriodicWorkRequestBuilder<ReminderWorker>(12, TimeUnit.HOURS).build()
+            val req = PeriodicWorkRequestBuilder<ReminderWorker>(1, TimeUnit.HOURS).build()
             WorkManager.getInstance(ctx)
-                .enqueueUniquePeriodicWork(UNIQUE, ExistingPeriodicWorkPolicy.KEEP, req)
+                .enqueueUniquePeriodicWork(UNIQUE, ExistingPeriodicWorkPolicy.UPDATE, req)
+        }
+
+        /** Cek pengingat SEKARANG (tanpa menunggu jadwal). Dipanggil setelah data berubah / aplikasi dibuka. */
+        fun checkNow(ctx: Context) {
+            val req = OneTimeWorkRequestBuilder<ReminderWorker>().build()
+            WorkManager.getInstance(ctx)
+                .enqueueUniqueWork("motocare_check_now", ExistingWorkPolicy.REPLACE, req)
         }
 
         /** Dipakai tombol "Tes notifikasi" di Profil. */

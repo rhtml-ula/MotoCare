@@ -18,6 +18,7 @@ import com.rahmatulula.motocare.util.ReminderStatus
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
+import com.rahmatulula.motocare.worker.ReminderWorker
 import kotlinx.coroutines.launch
 
 enum class SortOption { NEWEST, OLDEST, COST_HIGH, COST_LOW }
@@ -89,13 +90,19 @@ class MotoViewModel(app: Application) : AndroidViewModel(app) {
     suspend fun getReminder(id: Long) = repo.getReminder(id)
 
     // ---------- Aksi tulis (jalan di background lewat coroutine) ----------
-    fun saveMotor(m: Motor, onDone: () -> Unit) = viewModelScope.launch { repo.saveMotor(m); onDone() }
+    /** Setelah data berubah, cek pengingat langsung agar notifikasi "terlambat" muncul seketika. */
+    private fun checkReminders() = ReminderWorker.checkNow(getApplication())
+
+    fun saveMotor(m: Motor, onDone: () -> Unit) = viewModelScope.launch { repo.saveMotor(m); checkReminders(); onDone() }
     fun deleteMotor(m: Motor, onDone: () -> Unit) = viewModelScope.launch { repo.deleteMotor(m); onDone() }
 
-    fun saveService(s: ServiceRecord, onDone: () -> Unit) = viewModelScope.launch { repo.saveService(s); onDone() }
+    fun saveService(s: ServiceRecord, onDone: () -> Unit) = viewModelScope.launch { repo.saveService(s); checkReminders(); onDone() }
     fun deleteService(s: ServiceRecord, onDone: () -> Unit) = viewModelScope.launch { repo.deleteService(s); onDone() }
 
-    fun saveReminder(r: Reminder, onDone: () -> Unit) = viewModelScope.launch { repo.saveReminder(r); onDone() }
+    fun saveReminder(r: Reminder, onDone: () -> Unit) = viewModelScope.launch { repo.saveReminder(r); checkReminders(); onDone() }
     fun deleteReminder(r: Reminder, onDone: () -> Unit) = viewModelScope.launch { repo.deleteReminder(r); onDone() }
-    fun setReminderActive(r: Reminder, active: Boolean) = viewModelScope.launch { repo.setReminderActive(r, active) }
+    fun setReminderActive(r: Reminder, active: Boolean) = viewModelScope.launch {
+        repo.setReminderActive(r, active)
+        if (active) checkReminders()
+    }
 }
